@@ -17,6 +17,7 @@ BuildRequires:  perl-devel
 Buildrequires:  perl(Number::Format)
 Buildrequires:  perl(Template)
 buildArch:      noarch
+buildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 Template::Plugin::Number::Format makes the number-munging grooviness of
