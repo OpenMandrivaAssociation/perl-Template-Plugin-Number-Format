@@ -1,15 +1,13 @@
 %define upstream_name    Template-Plugin-Number-Format
-%define upstream_version 1.02
-
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	1.02
+Release:	5
 
 Summary:	Plugin/filter interface to Number::Format
 License:	Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Template/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://metacpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Template/%{upstream_name}-%{version}.tar.bz2
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -23,7 +21,7 @@ Number::Format available to your templates. It is used like a plugin, but
 installs filters into the current context.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -43,9 +41,7 @@ make test
 %changelog
 * Sat Aug 01 2009 Jérôme Quelin <jquelin@mandriva.org> 1.20.0-1mdv2010.0
 + Revision: 405534
-- rebuild using %%perl_convert_version
-
-* Wed Jul 23 2008 Thierry Vignaud <tvignaud@mandriva.com> 1.02-3mdv2009.0
+- rebuild using %1.02 Wed Jul 23 2008 Thierry Vignaud <tvignaud@mandriva.com> 1.02-3mdv2009.0
 + Revision: 241951
 - rebuild
 - kill re-definition of %%buildroot on Pixel's request
